@@ -1,0 +1,73 @@
+<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 822.72 280.958904109589" style="max-height: 500px" width="822.72" height="280.958904109589">
+  <defs>
+    
+    <linearGradient y2="200" x2="0" y1="0" x1="0" id="plateGradient">
+      <stop stop-color="#3CC4FF" offset="0%"/>
+      <stop stop-color="#0EA5E9" offset="100%"/>
+    </linearGradient>
+
+    
+    <filter height="200%" width="200%" y="-40%" x="-40%" id="plateShadow">
+      <feDropShadow flood-opacity="0.35" flood-color="black" stdDeviation="6" dy="4" dx="0"/>
+    </filter>
+
+    
+    <filter height="200%" width="200%" y="-50%" x="-50%" id="studShadow">
+      <feDropShadow flood-opacity="0.40" flood-color="black" stdDeviation="3" dy="3" dx="0"/>
+    </filter>
+
+    
+    <filter height="200%" width="200%" y="-40%" x="-40%" id="textShadow">
+      <feDropShadow flood-opacity="0.6" flood-color="black" stdDeviation="2" dy="1" dx="0"/>
+    </filter>
+  </defs>
+
+  
+  <g filter="url(#plateShadow)" transform="translate(40, 40)">
+    <rect fill="url(#plateGradient)" rx="20" height="200" width="200"/>
+
+    
+    <g filter="url(#studShadow)" fill="#3CC4FF">
+      <circle r="11" cy="24" cx="24"/>
+      <circle r="11" cy="24" cx="62"/>
+      <circle r="11" cy="24" cx="100"/>
+      <circle r="11" cy="24" cx="138"/>
+      <circle r="11" cy="24" cx="176"/>
+
+      <circle r="11" cy="62" cx="24"/>
+      <circle r="11" cy="62" cx="62"/>
+      <circle r="11" cy="62" cx="100"/>
+      <circle r="11" cy="62" cx="138"/>
+      <circle r="11" cy="62" cx="176"/>
+
+      <circle r="11" cy="100" cx="24"/>
+      <circle r="11" cy="100" cx="62"/>
+      <circle r="11" cy="100" cx="100"/>
+      <circle r="11" cy="100" cx="138"/>
+      <circle r="11" cy="100" cx="176"/>
+
+      <circle r="11" cy="138" cx="24"/>
+      <circle r="11" cy="138" cx="62"/>
+      <circle r="11" cy="138" cx="100"/>
+      <circle r="11" cy="138" cx="138"/>
+      <circle r="11" cy="138" cx="176"/>
+
+      <circle r="11" cy="176" cx="24"/>
+      <circle r="11" cy="176" cx="62"/>
+      <circle r="11" cy="176" cx="100"/>
+      <circle r="11" cy="176" cx="138"/>
+      <circle r="11" cy="176" cx="176"/>
+    </g>
+  </g>
+
+  
+  <g filter="url(#textShadow)" transform="translate(300, 140)">
+    <text font-family="system-ui, -apple-system, 'Segoe UI', sans-serif" fill="#FFFFFF" font-weight="700" font-size="64" y="0" x="0">
+      KS Baseplate
+    </text>
+
+    <text font-family="system-ui, -apple-system, 'Segoe UI', sans-serif" fill="#FFFFFF" font-weight="400" font-size="26" y="54" x="0">
+      Your baseplate for building fullstack apps.
+    </text>
+  </g>
+</svg>

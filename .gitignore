@@ -1,0 +1,54 @@
+# ==================================
+# Node / TypeScript / Build outputs
+# ==================================
+node_modules/
+dist/
+build/
+.tmp/
+temp/
+.cache/
+.eslintcache
+*.tsbuildinfo
+
+# ============================
+# Yarn v4 / Corepack Artifacts
+# ============================
+# Ignore everything inside .yarn except the required folders
+.yarn/*
+!.yarn/patches
+!.yarn/plugins
+!.yarn/releases
+!.yarn/sdks
+!.yarn/versions
+
+.pnp.*
+.yarnrc.yml
+
+# ======================
+# Environment Variables
+# ======================
+.env
+.env.local
+.env.development
+.env.production
+.env.test
+
+# =======================
+# Client Build Artifacts
+# =======================
+client/dist/
+client/.vite/
+
+# =======================
+# Server Build Artifacts
+# =======================
+server/dist/
+
+# ====================================
+# OS / Editor / Tooling Noise Files
+# ====================================
+.DS_Store
+Thumbs.db
+.idea/
+.vscode/
+*.log
