@@ -32,6 +32,8 @@ export const bootstrap = async () => {
     }),
   );
 
+  // Healthcheck used by the root "dev:client" script (wait-on).
+  // If you change or remove this route, update dev:client in package.json.
   app.get('/healthz', (_req, res) => {
     res.json({ ok: true });
   });
