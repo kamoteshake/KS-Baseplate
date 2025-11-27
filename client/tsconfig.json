@@ -7,6 +7,7 @@
     "types": ["vite/client", "vitest/globals"],
     "paths": {
       "src/*": ["./src/*"],
+      "apollo/*": ["./src/apollo/*"],
       "components/*": ["./src/components/*"],
       "pages/*": ["./src/pages/*"],
       "theme/*": ["./src/theme/*"]

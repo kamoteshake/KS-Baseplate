@@ -7,6 +7,7 @@ export default defineConfig({
   resolve: {
     alias: {
       src: path.resolve(__dirname, './src'),
+      apollo: path.resolve(__dirname, './src/apollo'),
       components: path.resolve(__dirname, './src/components'),
       pages: path.resolve(__dirname, './src/pages'),
       theme: path.resolve(__dirname, './src/theme'),
