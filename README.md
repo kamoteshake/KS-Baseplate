@@ -73,6 +73,19 @@ git merge origin/feature/auth0
 This system keeps `main` simple and extensible while allowing developers to use pre-built feature integrations as needed.
 
 
+# 🔐 Auth0 Integration (feature/auth0 branch)
+This branch adds **Auth0 authentication and JWT-protected GraphQL** on top of the `main` KS Baseplate template.
+Use this branch when you want a fullstack foundation with:
+
+- Auth0 login + redirect flow
+- Authenticated Apollo Client
+- JWT validation on the server
+- User info injected into the GraphQL context
+- Optional client-side UI protection helpers
+
+If you do not need authentication, use the `main` branch instead.
+
+
 # 🏁 Quick Start
 
 ## 1. **Create a new project from KS Baseplate (no git history)**
@@ -169,11 +182,18 @@ This template uses **workspace-specific** `.env` **files**.
 ```env
 PORT=4000
 MONGO_URI=mongodb://localhost:27017/ks_baseplate
+
+AUTH0_DOMAIN=your-tenant.us.auth0.com
+AUTH0_AUDIENCE=your_api_identifier
 ```
 
 ### Client(`client/.env`)
 ```env
 VITE_GRAPHQL_URL=http://localhost:4000/graphql
+
+VITE_AUTH0_DOMAIN=your-tenant.us.auth0.com
+VITE_AUTH0_CLIENT_ID=your_auth0_client_id
+VITE_AUTH0_AUDIENCE=your_api_identifier
 ```
 
 ### How `VITE_GRAPHQL_URL` works
@@ -210,6 +230,61 @@ If you update the server `PORT`, be sure to also update:
 - the `dev:client` wait-on URL in the root `package.json`
 
 This ensures the client waits for the correct server during `yarn dev`.
+
+
+# 🧱 How Authentication Works
+### 1. Client: Auth0Provider wraps the React app
+Auth0 handles:
+- Redirecting users to Auth0
+- Returning users after login
+- Managing authentication state
+- Fetching tokens silently
+
+### 2. Client: Apollo Client attaches JWTs automatically
+The `AuthenticatedApolloProvider`:
+- Retrieves tokens with `getAccessTokenSilently()`
+- Adds `Authorization: Bearer <token>` to GraphQL requests
+- Falls back gracefully for unauthenticated users
+
+### 3. Server: GraphQL API requires a valid JWT
+The server uses:
+```
+express-oauth2-jwt-bearer
+```
+to validate incoming tokens before executing resolvers.
+
+### 4. User is included in GraphQL context
+Your resolvers receive:
+```
+ctx.user
+```
+
+You can use this for:
+- Authorization logic
+- Linking documents to users
+- User-specific queries
+- Role-based logic
+
+The baseplate does not impose any patterns — you choose how to use ctx.user.
+
+
+# 🛡️ Optional UI Protection
+This branch includes a small RequireAuth helper to protect client components or pages.
+
+#### Soft gate:
+```ts
+<RequireAuth>
+  <YourComponent />
+</RequireAuth>
+```
+
+#### Auto-redirect:
+```ts
+<RequireAuth autoRedirect>
+  <YourComponent />
+</RequireAuth>
+```
+This is purely optional — feel free to replace this pattern with your own UI or routing approach.
 
 
 # 🎨 Import Aliases (Client Only)
@@ -307,6 +382,14 @@ VITE_GRAPHQL_URL=https://api.yourdomain.com/graphql
 ```
 
 Refer to the [**Environment Variables**](#how-vite_graphql_url-works) section for more details.
+
+### 🔒 Auth0 Production Notes
+When deploying to production:
+- Ensure Auth0 **Allowed Callback URLs** include your domain
+- Ensure Auth0 **Allowed Web Origins** include your domain
+- Ensure Auth0 **Allowed Logout URLs** are configured
+
+When deploying client + server together:
 
 
 # 🔒 Optional: CORS Configuration
