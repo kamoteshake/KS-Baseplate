@@ -40,6 +40,39 @@ All running inside **Yarn v4 Workspaces**, fully typed, fully tested.
 - 🏗 Production mode with Express serving the built client
 
 
+# 📚 Branch System
+KS Baseplate uses a **feature-branch system** to keep the main template clean while offering optional integrations you can explore or merge into your own project.
+
+Every feature branch is self-contained and built on top of the `main` template.
+### Main Branches
+| **Branch** | **Description** |
+|------------|-----------------|
+| **main**   | The core KS Baseplate template — clean, minimal, and production-ready. No authentication or optional integrations included. |
+
+### Feature Branches
+|  **Branch  |  **Status**  |  **Description**  |
+|------------|--------------|-------------------|
+|**feature/auth0**|*planned*|Adds full authentication/authorization using Auth0 (React SDK + JWT-protected GraphQL API).|
+|*(future branches)*|--| Additional integrations (Prisma, Stripe, file uploads, RBAC, etc.) may be added over time.|
+
+<br />
+
+### 🔧 How to use feature branches
+#### Checkout a feature directly:
+```bash
+git checkout feature/auth0
+```
+#### Create a new project directly from a feature branch:
+```bash
+npx degit kamoteshake/KS-Baseplate#feature/auth0 my-app
+```
+#### Merge a feature branch into your project:
+```bash
+git merge origin/feature/auth0
+```
+This system keeps `main` simple and extensible while allowing developers to use pre-built feature integrations as needed.
+
+
 # 🏁 Quick Start
 
 ## 1. **Create a new project from KS Baseplate (no git history)**
