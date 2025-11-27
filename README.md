@@ -52,8 +52,8 @@ Every feature branch is self-contained and built on top of the `main` template.
 ### Feature Branches
 |  **Branch  |  **Status**  |  **Description**  |
 |------------|--------------|-------------------|
-|**feature/auth0**|*planned*|Adds full authentication/authorization using Auth0 (React SDK + JWT-protected GraphQL API).|
-|*(future branches)*|--| Additional integrations (Prisma, Stripe, file uploads, RBAC, etc.) may be added over time.|
+|**feature/auth0**|**snapped-on**|Adds full authentication/authorization using Auth0 (React SDK + JWT-protected GraphQL API).|
+|*(future branches)*|*organizing bricks*| Additional integrations (Prisma, Stripe, file uploads, RBAC, etc.) may be added over time.|
 
 <br />
 
