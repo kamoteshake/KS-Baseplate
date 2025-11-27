@@ -50,7 +50,7 @@ Every feature branch is self-contained and built on top of the `main` template.
 | **main**   | The core KS Baseplate template — clean, minimal, and production-ready. No authentication or optional integrations included. |
 
 ### Feature Branches
-|  **Branch  |  **Status**  |  **Description**  |
+|  **Branch**  |  **Status**  |  **Description**  |
 |------------|--------------|-------------------|
 |**feature/auth0**|**snapped-on**|Adds full authentication/authorization using Auth0 (React SDK + JWT-protected GraphQL API).|
 |*(future branches)*|*organizing bricks*| Additional integrations (Prisma, Stripe, file uploads, RBAC, etc.) may be added over time.|
