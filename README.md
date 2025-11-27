@@ -176,7 +176,29 @@ MONGO_URI=mongodb://localhost:27017/ks_baseplate
 VITE_GRAPHQL_URL=http://localhost:4000/graphql
 ```
 
-Example templates:
+### How `VITE_GRAPHQL_URL` works
+This value is compiled into the frontend at build time, so it must match your deployment strategy.
+#### Local development
+```env
+VITE_GRAPHQL_URL=http://localhost:4000/graphql
+```
+
+#### Production (client + server on same domain)
+```env
+VITE_GRAPHQL_URL=/graphql
+```
+
+This tells the client to call:
+```arduino
+https://yourdomain.com/graphql
+```
+
+#### Production (API hosted separately)
+```env
+VITE_GRAPHQL_URL=https://api.yourdomain.com/graphql
+```
+
+Example env templates are provided at:
 ```env
 server/.env.example
 client/.env.example
@@ -246,18 +268,38 @@ yarn test
 
 
 # 🏗 Production Build
+Build both client and server:
 ```bash
 yarn build
+```
+
+Start the production server:
+```bash
 yarn start
 ```
 
-- Client → built with Vite
-- Server → built with tsup
-- Express serves:
-  - `/graphql`
-  - the built React app at `/`
+This runs:
+- 🟩 **Client** → built by Vite into `client/dist`
+- 🟦 **Server** → built by tsup into `server/dist`
 
-Deployment-ready out of the box.
+Express serves:
+- The built React app at `/`
+- The GraphQL API at `/graphql`
+
+### Choosing the correct GraphQL URL
+The client uses the environment variable `VITE_GRAPHQL_URL`, which must be set before building.
+
+For shared-domain deployments (recommended):
+```env
+VITE_GRAPHQL_URL=/graphql
+```
+
+For separate-domain deployments:
+```env
+VITE_GRAPHQL_URL=https://api.yourdomain.com/graphql
+```
+
+Refer to the [**Environment Variables**](/#How-VITE_GRAPHQL_URL-works) section for more details.
 
 
 # 🔒 Optional: CORS Configuration
