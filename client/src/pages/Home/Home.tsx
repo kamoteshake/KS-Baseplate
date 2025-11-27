@@ -3,6 +3,7 @@ import { useQuery } from '@apollo/client/react';
 import { Typography, Container, Button, CircularProgress, Alert, Stack } from '@mui/material';
 
 import { AuthButtons } from 'components/AuthButtons';
+import { RequireAuth } from 'components/RequireAuth';
 import { TodoSection } from 'components/TodoSection';
 import { useColorMode } from 'theme/ThemeProvider';
 
@@ -64,7 +65,9 @@ export const Home: React.FC = () => {
         {data && <Alert severity="success">{data.hello}</Alert>}
       </Stack>
 
-      <TodoSection />
+      <RequireAuth>
+        <TodoSection />
+      </RequireAuth>
     </Container>
   );
 };
