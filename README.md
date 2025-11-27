@@ -204,6 +204,13 @@ server/.env.example
 client/.env.example
 ```
 
+### 🔧 If you change the server port
+If you update the server `PORT`, be sure to also update:
+- `VITE_GRAPHQL_URL` (in the client `.env`)
+- the `dev:client` wait-on URL in the root `package.json`
+
+This ensures the client waits for the correct server during `yarn dev`.
+
 
 # 🎨 Import Aliases (Client Only)
 Import components cleanly:
