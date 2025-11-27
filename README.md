@@ -168,7 +168,7 @@ This template uses **workspace-specific** `.env` **files**.
 ### Server(`server/.env`)
 ```env
 PORT=4000
-MONGODB_URI=mongodb://localhost:27017/ks_baseplate
+MONGO_URI=mongodb://localhost:27017/ks_baseplate
 ```
 
 ### Client(`client/.env`)
