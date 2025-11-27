@@ -227,6 +227,49 @@ yarn start
 Deployment-ready out of the box.
 
 
+# 🔒 Optional: CORS Configuration
+Only needed if **your client and server will live on different domains or ports**
+
+By Default, Express server serves both the React app and the GraphQL API from the same origin:
+```arduino
+https://yourdomain.com/          → Client
+https://yourdomain.com/graphql   → Server
+```
+This means **CORS is not required** out of the box.
+
+If you separate your deployments (e.g. Vercel for client + VPS for server), add this to:
+```pgsql
+server/src/index.ts
+```
+```ts
+import cors from "cors";
+
+app.use(
+  cors({
+    origin: "https://your-frontend-domain.com",
+    credentials: true,
+  })
+);
+```
+Multiple allowed origins:
+```ts
+app.use(
+  cors({
+    origin: [
+      "https://app.example.com",
+      "https://admin.example.com",
+      "http://localhost:5173"
+    ],
+    credentials: true,
+  })
+);
+```
+
+
+# 📄 License
+MIT License — free to use, modify, and adapt.
+
+
 # 💬 Contributing
 Contributions, ideas, improvements, or feature requests are welcome!
 Feel free to open an issue or submit a PR.
