@@ -4356,6 +4356,15 @@ __metadata:
   languageName: node
   linkType: hard
 
+"express-oauth2-jwt-bearer@npm:^1.7.1":
+  version: 1.7.1
+  resolution: "express-oauth2-jwt-bearer@npm:1.7.1"
+  dependencies:
+    jose: "npm:^4.15.5"
+  checksum: 10c0/976878169a9c7cbf07d2f0367a450d42e309911a03f82f8a353f2ae2186a65e9d2aca7fef7b32b5fc657683881b470aa5fa4ce9faf1da88166a2f6c1a83142dd
+  languageName: node
+  linkType: hard
+
 "express@npm:^5.1.0":
   version: 5.1.0
   resolution: "express@npm:5.1.0"
@@ -5337,6 +5346,13 @@ __metadata:
     "@hapi/topo": "npm:^6.0.2"
     "@standard-schema/spec": "npm:^1.0.0"
   checksum: 10c0/e395e07df0051e7bd8da02436ef3f10d52561b0331b6c289de1725745f336a952b72672fc3687d4e81d3354f9b3580feb60ffca71281a585c48b63dade09e1fb
+  languageName: node
+  linkType: hard
+
+"jose@npm:^4.15.5":
+  version: 4.15.9
+  resolution: "jose@npm:4.15.9"
+  checksum: 10c0/4ed4ddf4a029db04bd167f2215f65d7245e4dc5f36d7ac3c0126aab38d66309a9e692f52df88975d99429e357e5fd8bab340ff20baab544d17684dd1d940a0f4
   languageName: node
   linkType: hard
 
@@ -6885,6 +6901,7 @@ __metadata:
     cors: "npm:^2.8.5"
     dotenv: "npm:^17.2.3"
     express: "npm:^5.1.0"
+    express-oauth2-jwt-bearer: "npm:^1.7.1"
     graphql: "npm:^16.12.0"
     mongodb: "npm:^7.0.0"
     tsup: "npm:^8.5.1"
