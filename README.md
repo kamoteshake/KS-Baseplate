@@ -299,7 +299,7 @@ For separate-domain deployments:
 VITE_GRAPHQL_URL=https://api.yourdomain.com/graphql
 ```
 
-Refer to the [**Environment Variables**](/#How-VITE_GRAPHQL_URL-works) section for more details.
+Refer to the [**Environment Variables**](#how-vite_graphql_url-works) section for more details.
 
 
 # 🔒 Optional: CORS Configuration
