@@ -1,6 +1,9 @@
 {
-  "name": "server",
+  "name": "ks-baseplate-server",
   "private": true,
+  "author": "Kamoteshake (GitHub: @kamoteshake)",
+  "license": "MIT",
+  "version": "1.0.0",
   "scripts": {
     "dev": "tsx watch src/index.ts",
     "build": "tsup",

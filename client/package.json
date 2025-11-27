@@ -1,6 +1,9 @@
 {
-  "name": "client",
+  "name": "ks-baseplate-client",
   "private": true,
+  "author": "Kamoteshake (GitHub: @kamoteshake)",
+  "license": "MIT",
+  "version": "1.0.0",
   "scripts": {
     "dev": "vite",
     "build": "vite build",

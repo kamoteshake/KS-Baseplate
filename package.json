@@ -1,6 +1,9 @@
 {
-  "name": "fullstack-template",
+  "name": "ks-baseplate",
   "private": true,
+  "author": "Kamoteshake (GitHub: @kamoteshake)",
+  "license": "MIT",
+  "version": "1.0.0",
   "packageManager": "yarn@4.12.0",
   "workspaces": [
     "client",
@@ -9,7 +12,7 @@
   "scripts": {
     "dev": "concurrently -c \"blueBright,yellowBright\" -n \"🟣 server\",\"🟢 client\" \"yarn dev:server\" \"yarn dev:client\"",
     "dev:server": "yarn workspace server dev",
-    "dev:client": "wait-on tcp:4000 && yarn workspace client dev",
+    "dev:client": "echo \"⏳waiting for /healthz...\" && wait-on http-get://localhost:4000/healthz && echo \"✅ healthz OK, starting Vite\" && yarn workspace client dev",
     "build": "yarn workspaces foreach --all run build",
     "start": "yarn workspace server start",
     "lint": "concurrently -c \"yellowBright,blueBright\" -n \"🧹 client-lint\",\"🧹 server-lint\" \"yarn workspace client lint\" \"yarn workspace server lint\"",
