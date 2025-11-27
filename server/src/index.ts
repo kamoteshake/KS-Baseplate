@@ -10,6 +10,7 @@ import { typeDefs } from './graphql/schema';
 import { resolvers } from './graphql/resolvers';
 import { config } from './config';
 import { connectToDb } from './db';
+import { requireAuth } from './auth';
 
 export const bootstrap = async () => {
   const app = express();
@@ -26,9 +27,10 @@ export const bootstrap = async () => {
 
   app.use(
     '/graphql',
+    requireAuth,
     json(),
     expressMiddleware(server, {
-      context: async () => createContext(db),
+      context: async ({ req }) => createContext(db, req.auth?.payload ?? null),
     }),
   );
 
