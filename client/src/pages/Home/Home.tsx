@@ -2,6 +2,7 @@ import { gql } from '@apollo/client';
 import { useQuery } from '@apollo/client/react';
 import { Typography, Container, Button, CircularProgress, Alert, Stack } from '@mui/material';
 
+import { AuthButtons } from 'components/AuthButtons';
 import { TodoSection } from 'components/TodoSection';
 import { useColorMode } from 'theme/ThemeProvider';
 
@@ -33,9 +34,12 @@ export const Home: React.FC = () => {
           Full Stack Template
         </Typography>
 
-        <Button variant="outlined" onClick={toggleColorMode}>
-          Theme: {label}
-        </Button>
+        <Stack direction="row" spacing={2} alignItems="center">
+          <Button variant="outlined" onClick={toggleColorMode}>
+            Theme: {label}
+          </Button>
+          <AuthButtons />
+        </Stack>
       </Stack>
 
       <Typography variant="body1" gutterBottom>
