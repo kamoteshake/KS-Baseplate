@@ -22,7 +22,6 @@ temp/
 !.yarn/versions
 
 .pnp.*
-.yarnrc.yml
 
 # ======================
 # Environment Variables
