@@ -1,9 +1,8 @@
-import type { ReactNode } from 'react';
 import { ApolloProvider } from '@apollo/client/react';
 import { apolloClient } from 'apollo/client';
 
 type ApolloAppProviderProps = {
-  children: ReactNode;
+  children: React.ReactNode;
 };
 
 export const ApolloAppProvider = ({ children }: ApolloAppProviderProps) => {
