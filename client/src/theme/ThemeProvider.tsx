@@ -1,4 +1,4 @@
-import React, { createContext, useContext, useMemo, useState, type ReactNode } from 'react';
+import React, { createContext, useContext, useMemo, useState } from 'react';
 import { ThemeProvider as MuiThemeProvider } from '@mui/material/styles';
 import { CssBaseline, useMediaQuery } from '@mui/material';
 import { getAppTheme } from './theme';
@@ -24,7 +24,7 @@ const ColorModeContext = createContext<ColorModeContextValue>({
 export const useColorMode = () => useContext(ColorModeContext);
 
 interface AppThemeProviderProps {
-  children: ReactNode;
+  children: React.ReactNode;
 }
 
 export const AppThemeProvider: React.FC<AppThemeProviderProps> = ({ children }) => {

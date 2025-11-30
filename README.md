@@ -140,19 +140,22 @@ yarn start     # Start production server
 # 🌳 Project Structure
 ```lua
 .
-├── client/                 # React + Vite app
+├── client/                        # React + Vite app
 │   ├── src/
+│   │   ├── apollo/                # Apollo Client (main branch)
+│   │   │   ├── client.ts          # ApolloClient setup (uses VITE_GRAPHQL_URL)
+│   │   │   └── ApolloAppProvider.tsx
 │   │   ├── components/
 │   │   │   └── TodoSection/
 │   │   ├── pages/
 │   │   │   └── Home/
 │   │   ├── theme/
-│   │   ├── apolloClient.ts
 │   │   ├── router.tsx
+│   │   ├── App.tsx
 │   │   └── main.tsx
 │   └── vite.config.ts
 │
-├── server/                 # Node + Express + GraphQL
+├── server/                        # Node + Express + GraphQL
 │   ├── src/
 │   │   ├── config.ts
 │   │   ├── db.ts
